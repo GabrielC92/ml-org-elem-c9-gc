@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('general.css');
+@import url('header.css');
+@import url('footer.css');
+@import url('register.css');
+
+/* main */
+.home{
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.home img.banner{
+    display: none;
+}
+.home section{
+    padding: 5%;
+}
+.home section h2{
+    margin: 30px auto;
+    font-size: 24px;
+    color: var(--grisOscuro);
+}
+.home section article{
+    margin: 10px auto;
+}
+.home section article .product{
+    width: 90vw;
+}
+.home section article .details{
+    background-color: #FFF;
+    padding: 15px;
+}
+.home section article .details i{
+    display: block;
+    font-size: 16px;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--verde);
+    background-color: #FFF;
+    border-radius: 50%;
+    position: relative;
+    right: -88%;
+    top: -35px;
+    color: var(--verde);
+}
+.home section article .price{
+    font-size: 18px;
+    width: 30%;
+}
+.home section article .off{
+    color: var(--verde);
+    font-size: 16px;
+    display: inline-block;
+    width: 50%;
+    padding: 0 5%;
+}
+.home section article h4{
+    display: none;
+}
+
+@media (min-width: 426px) {
+    .home img.banner{
+        display: block;
+        width: 100vw;
+    }
+    .home section{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100vw;
+        justify-content: space-between;
+    }
+    .home section h2{
+        width: 100vw;
+        margin: 10px 0 20px;
+    }
+    .home section article{
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+        margin: 10px 0;
+    }
+    .home section article .product{
+        width: 40vw;
+    }
+    .home section article .off{
+        text-align: center;
+    }
+    .home section article h4{
+        display: block;
+        font-size: 16px;
+        color: var(--grisOscuro);
+        margin: 15px auto;
+    }
+}
+
+@media (min-width: 769px) {
+    .home section article .product{
+        width: 20vw;
+    }
+    .home section article .off{
+        display: inline;
+    }
+}

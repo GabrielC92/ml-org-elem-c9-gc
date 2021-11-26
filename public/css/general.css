@@ -1,0 +1,27 @@
+:root{
+    --amarillo: #EAC926;
+    --azul: #03264C;
+    --celeste: #1259c3;
+    --grisOscuro: #666;
+    --grisClaro: #ebebeb;
+    --verde: #39b54a;
+    --rojo: #fd0606;
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+li a{
+    text-decoration: none;
+    font-size: 12px;
+    color: rgb(0, 0, 0);
+}
+body{
+    background-color: var(--grisClaro);
+}

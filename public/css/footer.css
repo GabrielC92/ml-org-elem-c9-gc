@@ -1,0 +1,33 @@
+footer{
+    background-color: #fff;
+    display: flex;
+    flex-flow: column wrap;
+}
+footer section article{
+    text-align: center;
+    padding: 0 35px;
+}
+footer section article i{
+    margin: 50px auto 10px;
+    font-size: 2em;
+    color: var(--celeste);
+}
+footer section article .description{
+    font-size: 12px;
+}
+footer .copyright{
+    font-size: 12px;
+    margin: 40px 10px 20px;
+}
+
+@media (min-width: 426px) {
+    footer .copyright{
+        text-align: center;
+    }
+}
+
+@media (min-width: 769px) {
+    footer section{
+        display: flex;
+    }
+}
