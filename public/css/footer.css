@@ -20,13 +20,13 @@ footer .copyright{
     margin: 40px 10px 20px;
 }
 
-@media (min-width: 426px) {
+@media (min-width: 576px) {
     footer .copyright{
         text-align: center;
     }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 992px) {
     footer section{
         display: flex;
     }

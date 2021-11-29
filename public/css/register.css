@@ -70,12 +70,12 @@
     width: 100%;
 }
 
-@media (min-width: 426px) {
+@media (min-width: 576px) {
     .register form{
         width: 60%;
     }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 992px) {
     
 }

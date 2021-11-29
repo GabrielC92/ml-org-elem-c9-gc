@@ -8,8 +8,8 @@ const toThousand = require('../utils/toThousand');
 const finalPrice = require('../utils/finalPrice');
 
 const controller = {
-	index: (req, res) => {
-		return res.render('index',{
+	home: (req, res) => {
+		return res.render('home',{
 			products,
 			toThousand,
 			finalPrice

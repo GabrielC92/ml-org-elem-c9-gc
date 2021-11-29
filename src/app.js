@@ -2,11 +2,19 @@ const createError = require('http-errors');
 const cookieParser = require('cookie-parser');
 const express = require('express');
 const logger = require('morgan');
+const session = require('express-session');
 const methodOverride =  require('method-override');
 const app = express();
 
 const path = require('path');
 const port = 3030;
+
+const localsUser = require('./middlewares/localsUser');
+const cookieCheck = require('./middlewares/cookieCheck');
+
+const indexRouter = require('./routes/main');
+const productsRouter = require('./routes/products');
+const usersRouter = require('./routes/users');
 
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.urlencoded({ extended: false }));
@@ -15,12 +23,21 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(methodOverride('_method'));
 
+app.use(session({
+  secret: "Liebre forever",
+  saveUninitialized: true,
+  resave: false
+}));
+
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, './views'));
 
-app.get('/', (req,res) => res.sendFile(path.join(__dirname,'views','home.html')));
-app.get('/login', (req,res) => res.sendFile(path.join(__dirname,'views','login.html')));
-app.get('/registro', (req,res) => res.sendFile(path.join(__dirname,'views','register.html')));
+app.use(cookieCheck);
+app.use(localsUser);
+
+app.use('/', indexRouter);
+app.use('/products', productsRouter);
+app.use('/users', usersRouter);
 
 app.listen(port, () => console.log(`Server running in http://localhost:${port}`));
 
