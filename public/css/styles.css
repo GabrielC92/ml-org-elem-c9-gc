@@ -3,26 +3,32 @@
 @import url('header.css');
 @import url('footer.css');
 @import url('register.css');
+@import url('detail.css');
 
 /* main */
 .home{
-    max-width: 90%;
+    padding: 10px 5%;
     display: flex;
     flex-wrap: wrap;
 }
-.home img.banner{
+img.banner{
     display: none;
 }
 .home section{
-    padding: 5%;
+    padding: 20px 0;
 }
 .home section h2{
-    margin: 30px auto;
+    margin: 0 auto;
     font-size: 24px;
     color: var(--grisOscuro);
 }
 .home section article{
     margin: 10px auto;
+    width: 100%;
+}
+.home section article .link-product{
+    display: flex;
+    flex-flow: column wrap;
 }
 .home section article .product{
     width: 100%;
@@ -30,7 +36,9 @@
 .home section article .details{
     background-color: #FFF;
     padding: 15px;
+    margin: 2px 0;
     position: relative;
+    height: 105px;
 }
 .home section article .details i{
     display: block;
@@ -62,26 +70,24 @@
 }
 
 @media (min-width: 576px) {
-    .home img.banner{
+    img.banner{
         display: block;
-        width: 100vw;
+        width: 100%;
     }
     .home section{
         display: flex;
         flex-wrap: wrap;
-        width: 100vw;
+        width: 100%;
         justify-content: space-between;
     }
     .home section h2{
-        width: 100vw;
+        width: 100%;
         margin: 10px 0 20px;
     }
     .home section article{
         box-shadow: 0px 0px 10px rgb(100, 100, 100);
         margin: 10px 0;
-    }
-    .home section article .product{
-        width: 40vw;
+        width: 47%;
     }
     .home section article .off{
         text-align: center;
@@ -90,13 +96,13 @@
         display: block;
         font-size: 16px;
         color: var(--grisOscuro);
-        margin: 15px auto;
+        margin: 10px auto;
     }
 }
 
 @media (min-width: 992px) {
-    .home section article .product{
-        width: 20vw;
+    .home section article{
+        width: 23%;
     }
     .home section article .off{
         display: inline;

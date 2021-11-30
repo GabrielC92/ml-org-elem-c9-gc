@@ -3,14 +3,14 @@
 <%- include('partials/head', {title: 'Inicio'}) %>
 <body>
     <%- include('partials/headerNavbar') %>
+    <img class="banner" src="/images/img-home-banner.jpg" alt="img-home-banner">
     <main class="home">
-        <img class="banner" src="/images/img-home-banner.jpg" alt="img-home-banner">
         <section>
             <h2>Basado en tu última visita</h2>
             <% products.forEach(product => { %>
              <% if (product.category == "visited") { %>
                 <article>
-                    <a href="/products/detail/<%= product.id %>">
+                    <a class="link-product" href="/products/detail/<%= product.id %>">
                         <img class="product" src="/images/products/<%= product.image %>" alt="<%= product.image %>">
                         <div class="details">
                             <i class="fas fa-truck"></i>
@@ -30,15 +30,17 @@
             <% products.forEach(product => { %>
                 <% if (product.category == "in-sale") { %>
                    <article>
-                       <img class="product" src="/images/products/<%= product.image %>" alt="<%= product.image %>">
-                       <div class="details">
-                           <i class="fas fa-truck"></i>
-                           <span class="price">$<%= finalPrice(product.price,product.discount) %></span>
-                           <% if (product.discount > 0) { %>
-                               <p class="off"><%= product.discount %>% OFF</p>
-                           <% } %>
-                           <h4><%= product.name %></h4>
-                       </div>
+                        <a class="link-product" href="/products/detail/<%= product.id %>">
+                           <img class="product" src="/images/products/<%= product.image %>" alt="<%= product.image %>">
+                           <div class="details">
+                               <i class="fas fa-truck"></i>
+                               <span class="price">$<%= finalPrice(product.price,product.discount) %></span>
+                               <% if (product.discount > 0) { %>
+                                   <p class="off"><%= product.discount %>% OFF</p>
+                               <% } %>
+                               <h4><%= product.name %></h4>
+                           </div>
+                       </a>
                    </article>
                 <% } %>
                <% }) %>

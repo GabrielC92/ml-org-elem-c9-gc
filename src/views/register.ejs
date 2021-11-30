@@ -4,18 +4,18 @@
 <body>
     <%- include('partials/headerNavbar') %>
     <main class="register">
-        <form action="/" method="GET">
-            <input class="text-data" type="text" name="name-lastName" id="" placeholder="Nombre y apellido" required>
+        <form action="" method="POST">
+            <input class="text-data" type="text" name="name-lastName" id="" placeholder="Nombre y apellido">
             <span class="aviso">*Obligatorio</span>
 
-            <input class="text-data" type="text" name="usuario" id="" placeholder="Nombre de usuario" required>
+            <input class="text-data" type="text" name="usuario" id="" placeholder="Nombre de usuario">
             <span class="aviso">*Obligatorio</span>
 
             <label class="titulo" for="born">Fecha de nacimiento</label>
             <input class="date" type="date" name="fecha" id="born" value="2021-07-22">
             <span class="aviso">*Obligatorio</span>
 
-            <input class="text-data" type="text" placeholder="Domicilio" required>
+            <input class="text-data" type="text" placeholder="Domicilio">
             <span class="aviso">*Obligatorio</span>
 
             <label class="titulo" for="perfil">Perfil del usuario</label>
@@ -53,9 +53,9 @@
             <label class="titulo" for="foto">Foto de usuario</label>
             <input class="foto" type="file" name="foto" id="foto">
 
-            <input class="text-data" type="password" name="password" id="password" placeholder="Elegí tu contraseña" required>
+            <input class="text-data" type="password" name="password" id="password" placeholder="Elegí tu contraseña">
             <span class="aviso">*Obligatorio</span>
-            <input class="text-data" type="password" name="confirm" id="confirm" placeholder="Confirmar contraseña" required>
+            <input class="text-data" type="password" name="confirm" id="confirm" placeholder="Confirmar contraseña">
             <span class="aviso">*Obligatorio</span>
 
             <div class="buttons">
