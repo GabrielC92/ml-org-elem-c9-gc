@@ -1,68 +1,105 @@
 <!DOCTYPE html>
 <html lang="es">
-<%- include('partials/head', {title: 'Registro'}) %>
+<%- include('partials/head', {title: 'Crear cuenta'}) %>
 <body>
     <%- include('partials/headerNavbar') %>
-    <main class="register">
-        <form action="" method="POST">
-            <input class="text-data" type="text" name="name-lastName" id="" placeholder="Nombre y apellido">
-            <span class="aviso">*Obligatorio</span>
+    <main class="main-detail">
+        <div class="row">
+			<div class="box-title-form">
+				<h2 class="products-title">Registro de usuario</h2>
+			</div>
+		</div>
+        <div class="box-title-form">
+            <form class="register" action="" method="POST" enctype="multipart/form-data">
+                <div class="row product-detail">
+                    <div class="box-title-form">
+                        <h2 class="titulo form-label"></h2>
+                    </div>
+                    <div class="box-title-form half-input">
+                        <input class="form-input" type="text" name="surName" id="surName" placeholder="Nombre y apellido" value="<%= locals.old && old.surName ? old.surName : null %>">
+                        <span class="aviso"><%= locals.errors && errors.surName ? errors.surName.msg : null %></span>
+                    </div>
+                    
+                    <div class="box-title-form half-input">
+                        <input class="form-input" type="text" name="nick" id="nick" placeholder="Nombre de usuario" value="<%= locals.old && old.nick ? old.nick : null %>">
+                        <span class="aviso"><%= locals.errors && errors.nick ? errors.nick.msg : null %></span>
+                    </div>
+                    
+                    <div class="box-title-form">
+                        <label class="titulo form-label" for="born">Fecha de nacimiento</label>
+                        <input class="date form-input half-input" type="date" name="born" id="born" min="1920-01-01" max="2005-12-31" value="<%= locals.old && old.born ? old.born : null %>">
+                        <span class="aviso"><%= locals.errors && errors.born? errors.born.msg : null %></span>
+                    </div>
+                    
+                    <div class="box-title-form">
+                        <input class="form-input" type="text" name="address" id="address" placeholder="Domicilio" value="<%= locals.old && old.address ? old.address : null %>">
+                        <span class="aviso"><%= locals.errors && errors.address ? errors.address.msg : null %></span>
+                    </div>
+                    
+                    <div class="box-title-form half-input">
+                        <label class="titulo form-label" for="profile">Perfil del usuario</label>
+                        <div class="select">
+                            <div class="box-title-form">
+                                <input class="radio" type="radio" name="profile" id="comprar" value="buy">
+                                <label class="option form-label" for="comprar">Comprador</label>
+                            </div>
+                        
+                            <div class="box-title-form">
+                                <input class="radio" type="radio" name="profile" id="vender" value="sell">
+                                <label class="option form-label" for="vender">Vendedor</label>
+                            </div>
+                        </div>
+                        <span class="aviso"><%= locals.errors && errors.profile ? errors.profile.msg : null %></span>
+                    </div>
+                    
+                    <div class="box-title-form half-input">
+                        <label class="titulo form-label" for="interest">Intereses</label>
+                        <div class="box-title-form">
+                            <input class="check" type="checkbox" name="interest" id="electro" value="elec">
+                            <label class="name-check" for="electro">Electro</label>
+                            
+                            <input class="check" type="checkbox" name="interest" id="moda" value="moda">
+                            <label class="name-check" for="moda">Moda</label>
+                            
+                            <input class="check" type="checkbox" name="interest" id="hogar" value="home">
+                            <label class="name-check" for="hogar">Hogar</label>
+                            
+                            <input class="check" type="checkbox" name="interest" id="juego" value="game">
+                            <label class="name-check" for="juego">Juguetería</label>
+                            
+                            <input class="check" type="checkbox" name="interest" id="sano" value="life">
+                            <label class="name-check" for="sano">Vida sana</label>
+                        </div>
+                        <span class="aviso"><%= locals.errors && errors.interest ? errors.interest.msg : null %></span>
+                    </div>
+                    
+                    <div class="box-title-form">
+                        <label class="titulo form-label" for="avatar">Foto de usuario</label>
+                        <input class="buy-now-button" type="file" name="avatar" id="avatar" accept="image/*">
+                    </div>
+                    
+                    <div class="box-title-form half-input">
+                        <input class="form-input" type="password" name="pass" id="pass" placeholder="Elegí tu contraseña">
+                        <span class="aviso"><%= locals.errors && errors.pass ? errors.pass.msg : null %></span>
+                    </div>
+                    <div class="box-title-form half-input">
+                        <input class="form-input" type="password" name="pass2" id="pass2" placeholder="Confirmar contraseña">
+                        <span class="aviso"><%= locals.errors && errors.pass2 ? errors.pass2.msg : null %></span>
+                    </div>
+                    
+                    <div class="box-title-form">
+                        <input class="radio" type="radio" name="terms" id="terms">
+                        <label class="form-label titulo" for="terms">Acepto términos y condiciones</label>
+                        <span class="aviso" style="display: block;"><%= locals.errors && errors.terms ? errors.terms.msg : null %></span>
+                    </div>
 
-            <input class="text-data" type="text" name="usuario" id="" placeholder="Nombre de usuario">
-            <span class="aviso">*Obligatorio</span>
-
-            <label class="titulo" for="born">Fecha de nacimiento</label>
-            <input class="date" type="date" name="fecha" id="born" value="2021-07-22">
-            <span class="aviso">*Obligatorio</span>
-
-            <input class="text-data" type="text" placeholder="Domicilio">
-            <span class="aviso">*Obligatorio</span>
-
-            <label class="titulo" for="perfil">Perfil del usuario</label>
-            <div class="select">
-                <div>
-                    <input class="radio" type="radio" name="perfil" id="comprar" value="comprar">
-                    <label class="option" for="comprar">Comprador</label>
+                    <div class="buttons box-title-form">
+                        <button class="buy-now-button" type="submit">Enviar</button>
+                        <button class="buy-now-button" type="reset">Cancelar</button>
+                    </div>
                 </div>
-
-                <div>
-                    <input class="radio" type="radio" name="perfil" id="vender" value="vender">
-                    <label class="option" for="vender">Vendedor</label>
-                </div>
-            </div>
-            <span class="aviso">*Obligatorio</span>
-
-            <label class="titulo" for="">Intereses</label>
-            <div>
-                <input class="check" type="checkbox" name="interes" id="electro" value="Electro">
-                <label class="name-check" for="electro">Electro</label>
-                
-                <input class="check" type="checkbox" name="interes" id="moda" value="Moda">
-                <label class="name-check" for="moda">Moda</label>
-                
-                <input class="check" type="checkbox" name="interes" id="hogar" value="Hogar">
-                <label class="name-check" for="hogar">Hogar</label>
-                
-                <input class="check" type="checkbox" name="interes" id="juego" value="Juguetería">
-                <label class="name-check" for="juego">Juguetería</label>
-                
-                <input class="check" type="checkbox" name="interes" id="sano" value="Vida-sana">
-                <label class="name-check" for="sano">Vida sana</label>
-            </div>
-            
-            <label class="titulo" for="foto">Foto de usuario</label>
-            <input class="foto" type="file" name="foto" id="foto">
-
-            <input class="text-data" type="password" name="password" id="password" placeholder="Elegí tu contraseña">
-            <span class="aviso">*Obligatorio</span>
-            <input class="text-data" type="password" name="confirm" id="confirm" placeholder="Confirmar contraseña">
-            <span class="aviso">*Obligatorio</span>
-
-            <div class="buttons">
-                <button type="submit">Enviar</button>
-                <button type="reset">Cancelar</button>
-            </div>
-        </form>
+            </form>
+        </div>
     </main>
     <%- include('partials/footer') %>
 </body>

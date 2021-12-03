@@ -3,14 +3,36 @@
 <%- include('partials/head', {title: 'Login'}) %>
 <body>
     <%- include('partials/headerNavbar') %>
-    <main class="register">
-        <form action="/" method="GET">
-            <input class="text-data" type="text" name="usuario" id="" placeholder="Nombre de usuario">
-            <span class="aviso">*Obligatorio</span>
-            <input class="text-data" type="password" name="password" id="password" placeholder="Contraseña">
-            <span class="aviso">*Obligatorio</span>
-            <button class="button-login" type="submit">Enviar</button>
-        </form>
+    <main class="main-detail">
+        <div class="row">
+			<div class="box-title-form">
+				<h2 class="products-title">Inicia sesión</h2>
+			</div>
+		</div>
+        <div class="box-title-form">
+            <form class="register" action="" method="POST">
+                <div class="row product-detail">
+                    <div class="box-title-form">
+                        <h2 class="titulo form-label"></h2>
+                    </div>
+                    <div class="box-title-form">
+                        <input class="form-input" type="text" name="nick" id="nick" placeholder="Nombre de usuario" value="<%= locals.old && old.nick ? old.nick : null %>">
+                        <span class="aviso"><%= locals.errors && errors.nick ? errors.nick.msg : null %></span>
+                    </div>
+                    <div class="box-title-form">
+                        <input class="form-input" type="password" name="pass" id="pass" placeholder="Contraseña">
+                        <span class="aviso"><%= locals.errors && errors.pass ? errors.pass.msg : null %></span>
+                    </div>
+                    <div class="box-title-form">
+                        <input class="check" type="checkbox" name="remind" id="remind">
+                        <label class="form-label titulo" for="remind">Recordarme</label>
+                    </div>
+                    <div class="box-title-form">
+                        <button class="buy-now-button" type="submit">Enviar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </main>
     <%- include('partials/footer') %>
 </body>

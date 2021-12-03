@@ -1,79 +1,58 @@
 .register{
     display: flex;
-    justify-content: center;
-    margin: 30px 0;
-}
-.register form{
-    width: 90%;
-    display: flex;
     flex-direction: column;
     align-content: center;
 }
-.register form .text-data{
-    padding: 5px;
-    border: 2px solid var(--azul);
-    border-radius: 5px;
-}
-.register form .aviso{
+.register .aviso{
     color: #c60e09;
     margin-bottom: 15px;
 }
-.register form .titulo{
+.register .titulo{
     margin: 10px 0;
     font-weight: 600;
     text-align: center;
     color: var(--celeste);
 }
-.register form .date{
-    width: 100%;
+.register .date{
     text-align: center;
     border: 2px dashed var(--azul);
     border-radius: 5px;
 }
-.register form .select{
-    padding: 5px;
+.register .select{
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
 }
-.register form .select .option{
+.register .select .option{
     color: var(--grisOscuro);
 }
-.register form .check{
+.register .check{
     width: 12%;
 }
-.register form .name-check{
+.register .name-check{
     color: var(--grisOscuro);
     display: inline-block;
     width: 80%;
     margin-bottom: 15px;
 }
-.register form .foto{
-    padding: 10px;
-    margin-bottom: 15px;
-    color: rgb(255, 0, 0);
-}
-.register form .buttons{
+.register .buttons{
     display: flex;
     justify-content: space-around;
 }
-.register form button{
+.register button{
     width: 40%;
     color: #FFF;
     background-color: var(--celeste);
-    border-radius: 5px;
-    padding: 5px;
-    margin-top: 15px;
 }
 
-/* login */
-.register form .button-login{
-    width: 100%;
+@media (min-width: 355px) {
+    .register .select{
+        flex-direction: row;
+    }
 }
 
 @media (min-width: 576px) {
-    .register form{
-        width: 60%;
-    }
+    
 }
 
 @media (min-width: 992px) {
