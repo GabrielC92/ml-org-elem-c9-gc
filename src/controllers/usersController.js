@@ -1,18 +1,19 @@
-const {validationResult} = require('express-validator');
 const fs = require('fs');
 const path = require('path');
-const bcryptjs = require('bcryptjs');
-
 const usersFilePath = path.join(__dirname, '../data/usersDB.json');
-const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+const users = JSON.parse(fs.readFileSync(usersFilePath,'utf-8'));
+
+const {validationResult} = require('express-validator');
+const bcryptjs = require('bcryptjs');
 
 module.exports = {
     register: (req,res) => res.render('register'),
     processReg: (req,res) => {
         let errors = validationResult(req);
-
+        const {surName,nick,born,address,profile,interest,pass} = req.body;
+        //return res.send(req.body)
         if (errors.isEmpty()) {
-            const {surName,nick,born,address,profile,interest,pass} = req.body;
+            
             let user = {
                 id : users.length > 0 ? users[users.length - 1].id + 1 : 1,
                 surName : surName.trim(),
@@ -21,7 +22,7 @@ module.exports = {
                 address : address.trim(),
                 profile : profile,
                 interest : interest,
-                pass : bcryptjs.hashSync(pass.trim(),10),
+                password : bcryptjs.hashSync(pass.trim(),10),
                 rol : 'user',
                 avatar : req.file ? req.file.filename : 'avatar_default.png'
             }
@@ -36,17 +37,17 @@ module.exports = {
             return res.redirect('/');
         } else {
             return res.render('register',{
-                old : req.body,
-                errors : errors.mapped()
+                errors : errors.mapped(),
+                old : req.body
             });
         }
     },
     login: (req,res) => res.render('login'),
     processLog: (req,res) => {
         let errors = validationResult(req);
+        const {nick,remind} = req.body;
 
         if (errors.isEmpty()) {
-            const {nick,remind} = req.body;
             let user = users.find(user => user.nick == nick.trim());
             req.session.userLogin = {
                 id : user.id,
@@ -60,8 +61,8 @@ module.exports = {
             return res.redirect('/');
         } else {
             return res.render('login',{
-                old : req.body,
-                errors : errors.mapped()
+                errors : errors.mapped(),
+                old : req.body
             });
         }
     },

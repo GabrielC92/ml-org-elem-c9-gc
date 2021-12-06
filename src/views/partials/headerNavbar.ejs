@@ -2,8 +2,8 @@
     <a href="/" class="logo">
         <img src="/images/logo-mercado-liebre.svg" alt="logo-mercado-liebre">
     </a>
-    <form class="search-bar" action="/search" method="GET">
-        <input type="search" name="keywords" placeholder="Buscar productos, marcas">
+    <form id="form-search" class="search-bar" action="/search" method="GET">
+        <input id="searcher" type="search" name="keywords" placeholder="Buscar productos, marcas y más">
         <button class="button-search" type="submit">
             <i class="fas fa-search"></i>
         </button>
@@ -23,8 +23,13 @@
     </nav>
     <nav class="login-bar">
         <ul>
-            <li><a href="/users/registro">Creá tu cuenta </a><i class="far fa-id-card"></i></li>
-            <li><a href="/users/login">Ingresá </a><i class="fas fa-sign-in-alt"></i></li>
+            <% if (locals.userLogin) { %>
+                <li><a href="#">Mi perfil </a><i class="far fa-user-circle"></i></li>
+                <li><a href="/users/logout">Cerrar sesión </a><i class="fas fa-sign-out-alt"></i></li>
+            <% } else { %>
+                <li><a href="/users/registro">Creá tu cuenta </a><i class="far fa-id-card"></i></li>
+                <li><a href="/users/login">Ingresá </a><i class="fas fa-sign-in-alt"></i></li>
+            <% } %>
             <li><a href="#">Mis compras </a><i class="fas fa-shopping-basket"></i></li>
         </ul>
     </nav>

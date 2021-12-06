@@ -4,7 +4,7 @@ const bcryptjs = require('bcryptjs');
 
 module.exports = [
     check('nick').notEmpty().withMessage('Ingrese su nombre de usuario').bail()
-    .isAlpha().withMessage('Solo se admiten caracteres alfabéticos').bail()
+    .isAlphanumeric().withMessage('Solo se admiten caracteres alfabéticos').bail()
     .isLength({min: 2}).withMessage('Debe tener 2 caracteres como mínimo'),
 
     body('nick')
@@ -20,7 +20,21 @@ module.exports = [
     .isLength({
         min: 8,
         max: 16
-    }).withMessage('La contraseña debe tener de 8 a 16 caracteres'),
+    })
+    .isStrongPassword({
+        minLength: 8,
+        minLowercase: 1,
+        minUppercase: 1,
+        minNumbers: 1,
+        minSymbols: 1,
+        returnScore: false,
+        pointsPerUnique: 1,
+        pointsPerRepeat: 0.5,
+        pointsForContainingLower: 10,
+        pointsForContainingUpper: 10,
+        pointsForContainingNumber: 10,
+        pointsForContainingSymbol: 10
+    }).withMessage('La contraseña debe tener de 8 a 16 caracteres, mayúscula/s, número/s y símbolo/s'),
 
     body('pass')
     .custom((value,{req}) => {

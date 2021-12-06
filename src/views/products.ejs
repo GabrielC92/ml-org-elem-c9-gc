@@ -13,7 +13,7 @@
 			<h2 class="products-title">Todos los productos</h2>
 			<% products.forEach(product => { %>
 				<article class="product-box">
-					<a href="/products/detail/<%= product.id %>">
+					<a class="link-product" href="/products/detail/<%= product.id %>">
 						<img class="product" src="/images/products/<%= product.image %>" alt="<%= product.image %>">
 						<div class="details">
 							<i class="fas fa-truck"></i>
@@ -33,5 +33,6 @@
 	<!-- footer -->
 	<%- include('partials/footer') %>
 	<!-- /footer -->
+	<%- include('partials/scripts') %>
 </body>	
 </html>

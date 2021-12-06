@@ -6,12 +6,13 @@ header{
     padding: 20px;
     align-items: center;
     justify-content: space-between;
+    color: var(--azul);
 }
 header .logo{
-    width: 50%;
+    width: 47%;
 }
 header .search-bar{
-    width: 46%;
+    width: 47%;
     display: flex;
     position: relative;
     border-radius: 3px;
@@ -21,6 +22,7 @@ header .search-bar input{
     border: 1px solid #fff;
     font-size: 12px;
     color: var(--grisOscuro);
+    width: 100%;
 }
 header .search-bar .button-search{
     position: relative;
@@ -60,19 +62,15 @@ header .burger-menu i {
 }
 
 @media (min-width: 576px) {
-    header{
-        padding: 25px 25px 0;
-    }
     header .logo{
         width: 33%;
     }
     header .search-bar{
-        width: 30%;
+        width: 31%;
+        margin-left: 10px;
     }
     header .search-bar input{
         border: 1px solid var(--grisOscuro);
-        margin-left: 20px;
-        width: 74%;
     }
     header .search-bar div{
         right: 0;
@@ -107,5 +105,16 @@ header .burger-menu i {
 }
 
 @media (min-width: 992px) {
-    
+    header .search-bar input{
+        font-size: 14px;
+    }
+    header .search-bar .button-search i{
+        font-size: 15px;
+    }
+    header p{
+        font-size: 14px;
+    }
+    header li a{
+        font-size: 14px;
+    }
 }

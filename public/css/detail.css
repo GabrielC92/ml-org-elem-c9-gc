@@ -84,6 +84,12 @@
     align-items: center;
     justify-content: center;
 }
+button.buy-now-button{
+    transition: all 0.4s;
+}
+button.buy-now-button:hover{
+    background-color: #0022AA;
+}
 hr{
     border-bottom: 1px solid var(--grisClaro);
 }

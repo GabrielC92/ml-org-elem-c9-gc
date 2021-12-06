@@ -22,7 +22,7 @@ li a{
 }
 a{
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: var(--azul);
 }
 body{
     background-color: var(--grisClaro);

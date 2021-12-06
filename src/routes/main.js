@@ -1,6 +1,6 @@
 // ************ Require's ************
-const express = require('express');
-const router = express.Router();
+var express = require('express');
+var router = express.Router();
 
 // ************ Controller Require ************
 const { home, search } = require('../controllers/mainController');

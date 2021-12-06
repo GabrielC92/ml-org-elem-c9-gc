@@ -6,6 +6,8 @@
 .register .aviso{
     color: #c60e09;
     margin-bottom: 15px;
+    position: relative;
+    bottom: 11px;
 }
 .register .titulo{
     margin: 10px 0;

@@ -1,1 +1,17 @@
-[]
+[
+  {
+    "id": 1,
+    "surName": "Juanito Arcoiris",
+    "nick": "ja2021",
+    "born": "2001-12-21",
+    "address": "Lafuente 2112",
+    "profile": "buy",
+    "interest": [
+      "elec",
+      "game"
+    ],
+    "password": "$2a$10$TpCtpOLNBYVf7Qb6BhqyOefwgOT99lhhVtNPpM/MZ46wAWkRATUN6",
+    "rol": "user",
+    "avatar": "avatar_default.png"
+  }
+]

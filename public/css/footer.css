@@ -2,22 +2,38 @@ footer{
     background-color: #fff;
     display: flex;
     flex-flow: column wrap;
+    color: var(--grisOscuro);
 }
 footer section article{
     text-align: center;
     padding: 0 35px;
+    margin: 25px auto;
 }
 footer section article i{
-    margin: 50px auto 10px;
+    margin: 0 auto 10px;
     font-size: 2em;
     color: var(--celeste);
+    transition: all 0.4s;
+}
+footer section article i:hover{
+    color: var(--verde);
+}
+footer section article i:hover ~ h4{
+    color: var(--azul);
+}
+footer section article i:hover ~ .description{
+    color: var(--azul);
+}
+footer section article h4{
+    transition: all 0.4s;
 }
 footer section article .description{
     font-size: 12px;
+    transition: all 0.4s;
 }
 footer .copyright{
     font-size: 12px;
-    margin: 40px 10px 20px;
+    margin: 20px 10px;
 }
 
 @media (min-width: 576px) {
@@ -29,5 +45,11 @@ footer .copyright{
 @media (min-width: 992px) {
     footer section{
         display: flex;
+    }
+    footer section article .description{
+        font-size: 14px;
+    }
+    footer .copyright{
+        font-size: 14px;
     }
 }

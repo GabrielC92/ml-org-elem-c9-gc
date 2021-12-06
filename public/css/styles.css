@@ -26,6 +26,20 @@ img.banner{
 .home section article{
     margin: 10px auto;
     width: 100%;
+    transition: all 0.4s;
+}
+.home section article:hover{
+    box-shadow: 0px 0px 10px var(--grisOscuro);
+}
+.home section article:hover .details{
+    height: 105px;
+}
+.home section article:hover i{
+    transform: rotate(360deg);
+    box-shadow: 0px 0px 5px var(--verde);
+}
+.home section article:hover h4{
+    display: block;
 }
 .home section article .link-product{
     display: flex;
@@ -39,7 +53,8 @@ img.banner{
     padding: 15px;
     margin: 2px 0;
     position: relative;
-    height: 105px;
+    height: 70px;
+    transition: all 0.4s;
 }
 .home section article .details i{
     display: block;
@@ -54,6 +69,7 @@ img.banner{
     right: 20px;
     top: -15px;
     color: var(--verde);
+    transition: all 0.4s;
 }
 .home section article .price{
     font-size: 18px;
@@ -68,6 +84,10 @@ img.banner{
 }
 .home section article h4{
     display: none;
+    font-size: 16px;
+    color: var(--grisOscuro);
+    margin: 10px auto;
+    transition: all 0.4s;
 }
 
 @media (min-width: 576px) {
@@ -86,18 +106,11 @@ img.banner{
         margin: 10px 0 20px;
     }
     .home section article{
-        box-shadow: 0px 0px 10px rgb(100, 100, 100);
         margin: 10px 0;
         width: 47%;
     }
     .home section article .off{
         text-align: center;
-    }
-    .home section article h4{
-        display: block;
-        font-size: 16px;
-        color: var(--grisOscuro);
-        margin: 10px auto;
     }
 }
 
