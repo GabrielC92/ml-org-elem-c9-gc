@@ -27,6 +27,8 @@ header .search-bar input{
 header .search-bar .button-search{
     position: relative;
     right: 17px;
+    border: none;
+    background-color: transparent;
 }
 header .search-bar .button-search i{
     padding: 1px;
